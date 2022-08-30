@@ -1,0 +1,37 @@
+[
+  {
+    "Name": "Domain.Com",
+    "Method": "GET",
+    "ContentType": "application/json",
+    "Url": "https://registration.domain.com/domains/search/{domain}?propertyID=47&tlds={tld}&aftermarket=false",
+    "PathCheck": "$.results[0].domainInfo.availability",
+    "ValueCheck": "true"
+  },
+  {
+    "Name": "Gandi",
+    "Method": "GET",
+    "ContentType": "application/json",
+    "Header": {
+      "Authorization": "Apikey Jwkl4tr1Nt46vmgJnTpZan8T"
+    },
+    "Url": "https://api.gandi.net/v5/domain/check?name={domain}",
+    "PathCheck": "$.products[0].status",
+    "ValueCheck": "available"
+  },
+  {
+    "Name": "Hostitsmart",
+    "Method": "GET",
+    "ContentType": "application/json",
+    "Url": "https://global.hostitsmart.com/domainsuggestion?domainname={sld}&tld={tld}",
+    "PathCheck": "$.['{domain}'].status",
+    "ValueCheck": "available"
+  },
+  {
+    "Name": "Secureserver",
+    "Method": "GET",
+    "ContentType": "application/json",
+    "Url": " https://www.secureserver.net/api/v1/search/exact?plid=1&q={domain}",
+    "PathCheck": "$.ExactMatchDomain.AvailabilityLabel",
+    "ValueCheck": "available_for_registration"
+  }
+]
