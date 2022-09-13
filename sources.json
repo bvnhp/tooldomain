@@ -30,8 +30,24 @@
     "Name": "Secureserver",
     "Method": "GET",
     "ContentType": "application/json",
-    "Url": " https://www.secureserver.net/api/v1/search/exact?plid=1&q={domain}",
+    "Url": "https://www.secureserver.net/api/v1/search/exact?plid=1&q={domain}",
     "PathCheck": "$.ExactMatchDomain.AvailabilityLabel",
     "ValueCheck": "available_for_registration"
+  },
+  {
+    "Name": "IPage",
+    "Method": "GET",
+    "ContentType": "application/json",
+    "Url": "https://registration.ipage.com/domains/search/{domain}?aftermarket=true&propertyID=40&searchTerm={domain}&tlds={tld}&currency=USD",
+    "PathCheck": "$.results[0].domainInfo.availability",
+    "ValueCheck": "true"
+  },
+  {
+    "Name": "Strato",
+    "Method": "GET",
+    "ContentType": "application/json",
+    "Url": "https://www.strato.de/orca/domain_name_search/get_domain_status/by_domain_name/strato/DE/{domain}",
+    "PathCheck": "$.domain_status.{domain}",
+    "ValueCheck": "0"
   }
 ]
