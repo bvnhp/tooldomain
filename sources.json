@@ -65,5 +65,13 @@
     "Url": "https://registration.dotster.com/domains/search/{domain}?aftermarket=true&propertyID=46&searchTerm={domain}&tlds=com&currency=USD",
     "PathCheck": "$.results[0].domainInfo.availability",
     "ValueCheck": "true"
+  },
+  {
+    "Name": "Dreamhost",
+    "Method": "GET",
+    "ContentType": "application/json",
+    "Url": "https://marketing-api.dreamhost.com/ajax.cgi?cmd=domreg-availability&domain={domain}&pricing_wanted=1",
+    "PathCheck": "$.available",
+    "ValueCheck": "true"
   }
 ]
