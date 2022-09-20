@@ -49,5 +49,13 @@
     "Url": "https://www.strato.de/orca/domain_name_search/get_domain_status/by_domain_name/strato/DE/{domain}",
     "PathCheck": "$.domain_status.{domain}",
     "ValueCheck": "0"
+  },
+  {
+    "Name": "Wordpress",
+    "Method": "GET",
+    "ContentType": "application/json",
+    "Url": "https://public-api.wordpress.com/rest/v1.3/domains/{domain}/is-available?http_envelope=1&blog_id=&is_cart_pre_check=false",
+    "PathCheck": "$.body.status",
+    "ValueCheck": "available"
   }
 ]
