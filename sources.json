@@ -73,5 +73,13 @@
     "Url": "https://marketing-api.dreamhost.com/ajax.cgi?cmd=domreg-availability&domain={domain}&pricing_wanted=1",
     "PathCheck": "$.available",
     "ValueCheck": "true"
+  },
+  {
+    "Name": "Netfirms",
+    "Method": "GET",
+    "ContentType": "application/json",
+    "Url": "https://registration.netfirms.com/domains/search/noname22.com?aftermarket=true&propertyID=45&searchTerm={domain}&tlds=com&currency=USD",
+    "PathCheck": "$.results[0].domainInfo.availability",
+    "ValueCheck": "true"
   }
 ]
