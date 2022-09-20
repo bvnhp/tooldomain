@@ -57,5 +57,13 @@
     "Url": "https://public-api.wordpress.com/rest/v1.3/domains/{domain}/is-available?http_envelope=1&blog_id=&is_cart_pre_check=false",
     "PathCheck": "$.body.status",
     "ValueCheck": "available"
+  },
+  {
+    "Name": "Dotster",
+    "Method": "GET",
+    "ContentType": "application/json",
+    "Url": "https://registration.dotster.com/domains/search/{domain}?aftermarket=true&propertyID=46&searchTerm={domain}&tlds=com&currency=USD",
+    "PathCheck": "$.results[0].domainInfo.availability",
+    "ValueCheck": "true"
   }
 ]
