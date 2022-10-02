@@ -47,7 +47,7 @@
     "Method": "GET",
     "ContentType": "application/json",
     "Url": "https://www.strato.de/orca/domain_name_search/get_domain_status/by_domain_name/strato/DE/{domain}",
-    "PathCheck": "$.domain_status.{domain}",
+    "PathCheck": "$.domain_status['{domain}']",
     "ValueCheck": "0"
   },
   {
