@@ -8,7 +8,9 @@
     },
     "Url": "https://api.gandi.net/v5/domain/check?name={domain}",
     "PathCheck": "$.products[0].status",
-    "ValueCheck": "available"
+    "ValueCheck": "available",
+    "UnsupportedCondition": "NOT_CONTAINT",
+    "UnsupportedValue": "{domain}"
   },
   {
     "Name": "Hostitsmart",
@@ -16,7 +18,9 @@
     "ContentType": "application/json",
     "Url": "https://global.hostitsmart.com/domainsuggestion?domainname={sld}&tld={tld}",
     "PathCheck": "$.['{domain}'].status",
-    "ValueCheck": "available"
+    "ValueCheck": "available",
+    "UnsupportedCondition": "EQUALS",
+    "UnsupportedValue": "error"
   },
   {
     "Name": "Secureserver",
@@ -24,7 +28,9 @@
     "ContentType": "application/json",
     "Url": "https://www.secureserver.net/api/v1/search/exact?plid=1&q={domain}",
     "PathCheck": "$.ExactMatchDomain.AvailabilityLabel",
-    "ValueCheck": "available_for_registration"
+    "ValueCheck": "available_for_registration",
+    "UnsupportedCondition": "CONTAINT",
+    "UnsupportedValue": "\"AvailabilityLabel\":\"\""
   },
   {
     "Name": "Wordpress",
@@ -32,6 +38,8 @@
     "ContentType": "application/json",
     "Url": "https://public-api.wordpress.com/rest/v1.3/domains/{domain}/is-available?http_envelope=1&blog_id=&is_cart_pre_check=false",
     "PathCheck": "$.body.status",
-    "ValueCheck": "available"
+    "ValueCheck": "available",
+    "UnsupportedCondition": "CONTAINT",
+    "UnsupportedValue": "\"status\":\"tld_not_supported\""
   }
 ]
