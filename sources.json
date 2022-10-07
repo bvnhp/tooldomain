@@ -30,7 +30,7 @@
     "PathCheck": "$.ExactMatchDomain.AvailabilityLabel",
     "ValueCheck": "available_for_registration",
     "AvailableCondition": "CONTAINT",
-    "AvailableValue": "{domain}",
+    "AvailableValue": "\"Fqdn\":\"{domain}\"",
     "UnsupportedCondition": "CONTAINT",
     "UnsupportedValue": "\"Message\":\"The tld you are searching for is not available"
   },
