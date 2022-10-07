@@ -29,8 +29,10 @@
     "Url": "https://www.secureserver.net/api/v1/search/exact?plid=1&q={domain}",
     "PathCheck": "$.ExactMatchDomain.AvailabilityLabel",
     "ValueCheck": "available_for_registration",
+    "AvailableCondition": "CONTAINT",
+    "AvailableValue": "{domain}",
     "UnsupportedCondition": "CONTAINT",
-    "UnsupportedValue": "\"AvailabilityLabel\":\"\""
+    "UnsupportedValue": "\"Message\":\"The tld you are searching for is not available"
   },
   {
     "Name": "Wordpress",
