@@ -1,13 +1,5 @@
 [
   {
-    "Name": "Domain.Com",
-    "Method": "GET",
-    "ContentType": "application/json",
-    "Url": "https://registration.domain.com/domains/search/{domain}?propertyID=47&tlds={tld}&aftermarket=false",
-    "PathCheck": "$.results[0].domainInfo.availability",
-    "ValueCheck": "true"
-  },
-  {
     "Name": "Gandi",
     "Method": "GET",
     "ContentType": "application/json",
@@ -35,51 +27,11 @@
     "ValueCheck": "available_for_registration"
   },
   {
-    "Name": "IPage",
-    "Method": "GET",
-    "ContentType": "application/json",
-    "Url": "https://registration.ipage.com/domains/search/{domain}?aftermarket=true&propertyID=40&searchTerm={domain}&tlds={tld}&currency=USD",
-    "PathCheck": "$.results[0].domainInfo.availability",
-    "ValueCheck": "true"
-  },
-  {
-    "Name": "Strato",
-    "Method": "GET",
-    "ContentType": "application/json",
-    "Url": "https://www.strato.de/orca/domain_name_search/get_domain_status/by_domain_name/strato/DE/{domain}",
-    "PathCheck": "$.domain_status['{domain}']",
-    "ValueCheck": "0"
-  },
-  {
     "Name": "Wordpress",
     "Method": "GET",
     "ContentType": "application/json",
     "Url": "https://public-api.wordpress.com/rest/v1.3/domains/{domain}/is-available?http_envelope=1&blog_id=&is_cart_pre_check=false",
     "PathCheck": "$.body.status",
     "ValueCheck": "available"
-  },
-  {
-    "Name": "Dotster",
-    "Method": "GET",
-    "ContentType": "application/json",
-    "Url": "https://registration.dotster.com/domains/search/{domain}?aftermarket=true&propertyID=46&searchTerm={domain}&tlds=com&currency=USD",
-    "PathCheck": "$.results[0].domainInfo.availability",
-    "ValueCheck": "true"
-  },
-  {
-    "Name": "Dreamhost",
-    "Method": "GET",
-    "ContentType": "application/json",
-    "Url": "https://marketing-api.dreamhost.com/ajax.cgi?cmd=domreg-availability&domain={domain}&pricing_wanted=1",
-    "PathCheck": "$.available",
-    "ValueCheck": "true"
-  },
-  {
-    "Name": "Netfirms",
-    "Method": "GET",
-    "ContentType": "application/json",
-    "Url": "https://registration.netfirms.com/domains/search/noname22.com?aftermarket=true&propertyID=45&searchTerm={domain}&tlds=com&currency=USD",
-    "PathCheck": "$.results[0].domainInfo.availability",
-    "ValueCheck": "true"
   }
 ]
