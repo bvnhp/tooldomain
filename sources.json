@@ -13,6 +13,20 @@
     "UnsupportedValue": "{domain}"
   },
   {
+    "Name": "Cloudflare",
+    "Method": "GET",
+    "ContentType": "application/json",
+    "Header": {
+      "X-auth-email": "qaz09wsx@gmail.com",
+      "X-Auth-Key": "b2e6991a28a284351fa52a028b9ac1248c528"
+    },
+    "Url": "https://api.cloudflare.com/client/v4/accounts/93a96517e3eaa125a445bac251b43fd9/registrar/domains/{domain}",
+    "PathCheck": "$.result.available",
+    "ValueCheck": "true",
+    "UnsupportedCondition": "CONTAINT",
+    "UnsupportedValue": "\"supported_tld\":false"
+  },
+  {
     "Name": "Hostitsmart",
     "Method": "GET",
     "ContentType": "application/json",
