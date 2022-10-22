@@ -48,15 +48,39 @@
     "UnsupportedCondition": "CONTAINT",
     "UnsupportedValue": "\"Message\":\"The tld you are searching for is not available"
   },
+  //{
+  //  "Name": "Wordpress",
+  //  "Method": "GET",
+  //  "ContentType": "application/json",
+  //  "Url": "https://public-api.wordpress.com/rest/v1.3/domains/{domain}/is-available?http_envelope=1&blog_id=&is_cart_pre_check=false",
+  //  "PathCheck": "$.body.status",
+  //  "ValueCheck": "available",
+  //  "UnsupportedCondition": "CONTAINT",
+  //  "UnsupportedValue": "\"status\":\"tld_not_supported\""
+  //},
   {
-    "Name": "Wordpress",
+    "Name": "Domain.com",
     "Method": "GET",
     "ContentType": "application/json",
-    "Url": "https://public-api.wordpress.com/rest/v1.3/domains/{domain}/is-available?http_envelope=1&blog_id=&is_cart_pre_check=false",
-    "PathCheck": "$.body.status",
-    "ValueCheck": "available",
-    "UnsupportedCondition": "CONTAINT",
-    "UnsupportedValue": "\"status\":\"tld_not_supported\""
+    "Url": "https://registration.domain.com/domains/search/{domain}?suggestions=0&aftermarket=false&registry_premium=false&propertyID=47&searchTerm={domain}&tlds={tld}&currency=USD",
+    "PathCheck": "$.results[0].domainInfo.availability",
+    "ValueCheck": "true",
+    "AvailableCondition": "CONTAINT",
+    "AvailableValue": "\"domain\":\"{domain}\"",
+    "UnsupportedCondition": "NOT_CONTAINT",
+    "UnsupportedValue": "\"domain_partner\":"
+  },
+    {
+    "Name": "Bluehost",
+    "Method": "GET",
+    "ContentType": "application/json",
+    "Url": "https://registration.bluehost.com/domains/search/{domain}?suggestions=0&aftermarket=false&propertyID=52&searchTerm={domain}&tlds={tld}&currency=USD",
+    "PathCheck": "$.results[0].domainInfo.availability",
+    "ValueCheck": "true",
+    "AvailableCondition": "CONTAINT",
+    "AvailableValue": "\"domain\":\"{domain}\"",
+    "UnsupportedCondition": "NOT_CONTAINT",
+    "UnsupportedValue": "\"domain_partner\":"
   },
   {
     "Name": "Google"
