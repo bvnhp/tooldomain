@@ -57,5 +57,11 @@
     "ValueCheck": "available",
     "UnsupportedCondition": "CONTAINT",
     "UnsupportedValue": "\"status\":\"tld_not_supported\""
+  },
+  {
+    "Name": "Google"
+  },
+  {
+    "Name": "Whois"
   }
 ]
