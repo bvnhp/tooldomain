@@ -12,30 +12,30 @@
     "UnsupportedCondition": "NOT_CONTAINT",
     "UnsupportedValue": "{domain}"
   },
-  {
-    "Name": "Cloudflare",
-    "Method": "GET",
-    "ContentType": "application/json",
-    "Header": {
-      "X-auth-email": "qaz09wsx@gmail.com",
-      "X-Auth-Key": "b2e6991a28a284351fa52a028b9ac1248c528"
-    },
-    "Url": "https://api.cloudflare.com/client/v4/accounts/93a96517e3eaa125a445bac251b43fd9/registrar/domains/{domain}",
-    "PathCheck": "$.result.available",
-    "ValueCheck": "true",
-    "UnsupportedCondition": "CONTAINT",
-    "UnsupportedValue": "\"supported_tld\":false"
-  },
-  {
-    "Name": "Hostitsmart",
-    "Method": "GET",
-    "ContentType": "application/json",
-    "Url": "https://global.hostitsmart.com/domainsuggestion?domainname={sld}&tld={tld}",
-    "PathCheck": "$.['{domain}'].status",
-    "ValueCheck": "available",
-    "UnsupportedCondition": "EQUALS",
-    "UnsupportedValue": "error"
-  },
+  //{
+  //  "Name": "Cloudflare",
+  //  "Method": "GET",
+  //  "ContentType": "application/json",
+  //  "Header": {
+  //    "X-auth-email": "qaz09wsx@gmail.com",
+  //    "X-Auth-Key": "b2e6991a28a284351fa52a028b9ac1248c528"
+  //  },
+  //  "Url": "https://api.cloudflare.com/client/v4/accounts/93a96517e3eaa125a445bac251b43fd9/registrar/domains/{domain}",
+  //  "PathCheck": "$.result.available",
+  //  "ValueCheck": "true",
+  //  "UnsupportedCondition": "CONTAINT",
+  //  "UnsupportedValue": "\"supported_tld\":false"
+  //},
+  //{
+  //  "Name": "Hostitsmart",
+  //  "Method": "GET",
+  //  "ContentType": "application/json",
+  //  "Url": "https://global.hostitsmart.com/domainsuggestion?domainname={sld}&tld={tld}",
+  //  "PathCheck": "$.['{domain}'].status",
+  //  "ValueCheck": "available",
+  //  "UnsupportedCondition": "EQUALS",
+  //  "UnsupportedValue": "error"
+  //},
   {
     "Name": "Secureserver",
     "Method": "GET",
@@ -58,30 +58,30 @@
   //  "UnsupportedCondition": "CONTAINT",
   //  "UnsupportedValue": "\"status\":\"tld_not_supported\""
   //},
-  {
-    "Name": "Domain.com",
-    "Method": "GET",
-    "ContentType": "application/json",
-    "Url": "https://registration.domain.com/domains/search/{domain}?suggestions=0&aftermarket=false&registry_premium=false&propertyID=47&searchTerm={domain}&tlds={tld}&currency=USD",
-    "PathCheck": "$.results[0].domainInfo.availability",
-    "ValueCheck": "true",
-    "AvailableCondition": "CONTAINT",
-    "AvailableValue": "\"domain\":\"{domain}\"",
-    "UnsupportedCondition": "NOT_CONTAINT",
-    "UnsupportedValue": "\"domain_partner\":"
-  },
-    {
-    "Name": "Bluehost",
-    "Method": "GET",
-    "ContentType": "application/json",
-    "Url": "https://registration.bluehost.com/domains/search/{domain}?suggestions=0&aftermarket=false&propertyID=52&searchTerm={domain}&tlds={tld}&currency=USD",
-    "PathCheck": "$.results[0].domainInfo.availability",
-    "ValueCheck": "true",
-    "AvailableCondition": "CONTAINT",
-    "AvailableValue": "\"domain\":\"{domain}\"",
-    "UnsupportedCondition": "NOT_CONTAINT",
-    "UnsupportedValue": "\"domain_partner\":"
-  },
+  //{
+  //  "Name": "Domain.com",
+  //  "Method": "GET",
+  //  "ContentType": "application/json",
+  //  "Url": "https://registration.domain.com/domains/search/{domain}?suggestions=0&aftermarket=false&registry_premium=false&propertyID=47&searchTerm={domain}&tlds={tld}&currency=USD",
+  //  "PathCheck": "$.results[0].domainInfo.availability",
+  //  "ValueCheck": "true",
+  //  "AvailableCondition": "CONTAINT",
+  //  "AvailableValue": "\"domain\":\"{domain}\"",
+  //  "UnsupportedCondition": "NOT_CONTAINT",
+  //  "UnsupportedValue": "\"domain_partner\":"
+  //},
+  //  {
+  //  "Name": "Bluehost",
+  //  "Method": "GET",
+  //  "ContentType": "application/json",
+  //  "Url": "https://registration.bluehost.com/domains/search/{domain}?suggestions=0&aftermarket=false&propertyID=52&searchTerm={domain}&tlds={tld}&currency=USD",
+  //  "PathCheck": "$.results[0].domainInfo.availability",
+  //  "ValueCheck": "true",
+  //  "AvailableCondition": "CONTAINT",
+  //  "AvailableValue": "\"domain\":\"{domain}\"",
+  //  "UnsupportedCondition": "NOT_CONTAINT",
+  //  "UnsupportedValue": "\"domain_partner\":"
+  //},
   {
     "Name": "Google"
   },
