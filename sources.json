@@ -82,9 +82,9 @@
   //  "UnsupportedCondition": "NOT_CONTAINT",
   //  "UnsupportedValue": "\"domain_partner\":"
   //},
-  {
-    "Name": "Google"
-  },
+  //{
+  //  "Name": "Google"
+  //},
   {
     "Name": "Whois"
   },
@@ -94,9 +94,9 @@
   {
     "Name": "Godaddy"
   },
-  {
-    "Name": "Dynadot"
-  },
+  //{
+  //  "Name": "Dynadot"
+  //},
   {
     "Name": "WebZ"
   },
