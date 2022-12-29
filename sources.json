@@ -96,7 +96,10 @@
     "Name": "Godaddy"
   },
   {
-    "Name": "Dynadot"
+    "Name": "Dynadot",
+    "Header": {
+      "Keys": "6i7rf6I7161G6S9N8i7HSv9N8LXN8i6m8O7U7pC7u,8H7z8Y9G8R6p6k6dbQ9R6Z6MBsgN8i6m8O7U7pC7u"
+    }
   },
   {
     "Name": "WebZ"
