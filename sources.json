@@ -116,7 +116,7 @@
   {
     "Name": "Name",
     "Header": {
-      "Authorization": "Basic ZWhxZ2Zhc2phb2xwcjo5NDVhYzZlZGNmZWM2NDNiMmRkYzY1NDU3MzlkOGYwZjE3YzNhZjUz"
+      "Auth": "Basic ZWhxZ2Zhc2phb2xwcjo5NDVhYzZlZGNmZWM2NDNiMmRkYzY1NDU3MzlkOGYwZjE3YzNhZjUz"
     }
   }, 
 ]
