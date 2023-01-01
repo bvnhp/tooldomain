@@ -1,11 +1,12 @@
 [
   //sistxplbtjtg@triots.com
+  //wfazaf@triots.com
   {
     "Name": "Gandi",
     "Method": "GET",
     "ContentType": "application/json",
     "Header": {
-      "Authorization": "Apikey zgm8PemZYV116t2WTkrsnj7q"
+      "Authorization": "Apikey JU5L8MGDsdn258AyXn3zHYJd"
     },
     "Url": "https://api.gandi.net/v5/domain/check?name={domain}",
     "PathCheck": "$.products[0].status",
