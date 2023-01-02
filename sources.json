@@ -6,7 +6,7 @@
     "Method": "GET",
     "ContentType": "application/json",
     "Header": {
-      "Authorization": "Apikey JU5L8MGDsdn258AyXn3zHYJd"
+      "Authorization": "Apikey JE1DEpsSLdBYpwwAjmemD4pA"
     },
     "Url": "https://api.gandi.net/v5/domain/check?name={domain}",
     "PathCheck": "$.products[0].status",
