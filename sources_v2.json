@@ -1,5 +1,66 @@
 [
   {
+    "Name": "Name",
+    "Steps": [
+      {
+        "Method": "GET",
+        "ContentType": "application/json",
+        "Url": "https://api.name.com/v4/domains:checkAvailability",
+        "Header": {
+          "Authorization": "Basic ZWhxZ2Zhc2phb2xwcjo5NDVhYzZlZGNmZWM2NDNiMmRkYzY1NDU3MzlkOGYwZjE3YzNhZjUz"
+        },
+        "Body": {
+          "domainNames": ["{domain}"]
+        },
+        "PathCheck": "$.results[?(@.domainName == '{domain}')].status",
+        "ValueCheck": "available",
+        "UnsupportedCondition": "NOT_CONTAINT",
+        "UnsupportedValue": "{domain}"
+      }
+    ]    
+  },
+  {
+    "Name": "Monovm",
+    "Steps": [
+      {
+        "Method": "GET",
+        "ContentType": "application/json",
+        "Url": "https://monovm.com/api/whois/?domain={domain}",
+        "PathCheck": "$.[?(@.domain == '{domain}')].status",
+        "ValueCheck": "available",
+        "UnsupportedCondition": "NOT_CONTAINT",
+        "UnsupportedValue": "{domain}"
+      }
+    ]    
+  },
+  {
+    "Name": "Milesweb",
+    "Steps": [
+      {
+        "Method": "GET",
+        "ContentType": "application/json",
+        "Url": "https://billing.milesweb.com/cart.php?a=add&domain=register",
+        "Regex": ".* csrfToken = '(.*?)'.*",
+        "IsGetValue": true
+      },
+      {
+        "Method": "POST",
+        "ContentType": "application/x-www-form-urlencoded",
+        "Url": "https://billing.milesweb.com/index.php?rp=/domain/check",
+        "Body": {
+          "token": "{stepData}",
+          "a": "checkDomain",
+          "domain": "{domain}",
+          "type": "domain"
+        },
+        "PathCheck": "$.result[?(@.domainName == '{domain}')].isAvailable",
+        "ValueCheck": "true",
+        "UnsupportedCondition": "NOT_CONTAINT",
+        "UnsupportedValue": "{domain}"
+      }
+    ]    
+  },
+  {
     "Name": "Godaddy",
     "Steps": [
       {
