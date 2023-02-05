@@ -1,5 +1,30 @@
 [
   {
+    "Name": "Amplica",
+    "Steps": [
+      {
+        "Method": "GET",
+        "ContentType": "application/json",
+        "Url": "https://amplica.shop/cart.php?a=add&domain=register",
+        "Regex": ".* csrfToken = '(.*?)'.*",
+        "IsGetValue": true
+      },
+      {
+        "Method": "POST",
+        "ContentType": "application/x-www-form-urlencoded",
+        "Url": "https://amplica.shop/index.php?rp=/domain/check",
+        "Body": {
+          "token": "{stepData}",
+          "a": "checkDomain",
+          "domain": "{domain}",
+          "type": "domain"
+        },
+        "PathCheck": "$.result[?(@.domainName == '{domain}')].isAvailable",
+        "ValueCheck": "true"
+      }
+    ]    
+  },
+  {
     "Name": "1Byte",
     "Steps": [
       {
