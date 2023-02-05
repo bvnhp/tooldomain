@@ -9,9 +9,9 @@
         "Header": {
           "Authorization": "Basic ZWhxZ2Zhc2phb2xwcjo5NDVhYzZlZGNmZWM2NDNiMmRkYzY1NDU3MzlkOGYwZjE3YzNhZjUz"
         },
-        "Body": {
-          "domainNames": "[{domain}]"
-        },
+        // "Body": {
+        //   "domainNames": "[{domain}]"
+        // },
         "PathCheck": "$.results[?(@.domainName == '{domain}')].status",
         "ValueCheck": "available",
         "UnsupportedCondition": "NOT_CONTAINT",
