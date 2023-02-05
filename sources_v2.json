@@ -3,7 +3,7 @@
     "Name": "Name",
     "Steps": [
       {
-        "Method": "GET",
+        "Method": "POST",
         "ContentType": "application/json",
         "Url": "https://api.name.com/v4/domains:checkAvailability",
         "Header": {
