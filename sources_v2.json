@@ -1,5 +1,19 @@
 [
   {
+    "Name": "1Byte",
+    "Steps": [
+      {
+        "Method": "GET",
+        "ContentType": "application/json",
+        "Url": "https://api.1byte.com/domains/search-iu?domain={domain}&page=1",
+        "PathCheck": "$.domain.available",
+        "ValueCheck": "true",
+        "UnsupportedCondition": "CONTAINT",
+        "UnsupportedValue": "{\"domain\":null"
+      }
+    ]    
+  },
+  {
     "Name": "Gandi",
     "Steps": [
       {
