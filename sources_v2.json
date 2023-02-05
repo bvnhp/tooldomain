@@ -6,7 +6,7 @@
         "Method": "GET",
         "ContentType": "application/json",
         "Url": "https://who.is/dns/{domain}",
-        "Regex": ".*var pendingDomainCheck = \"\"(.*?)\"\".*",
+        "Regex": ".*var pendingDomainCheck = \"(.*?)\".*",
         "IsGetValue": true
       },
       {
@@ -78,7 +78,7 @@
           "domains[]": "{domain}",
           "tlds[]": "{tld}"
         },
-        "Regex": ".*\"\"checkId\"\":\"\"(.*?)\"\".*",
+        "Regex": ".*\"checkId\":\"(.*?)\".*",
         "IsGetValue": true
       },
       {
