@@ -20,7 +20,9 @@
           "type": "domain"
         },
         "PathCheck": "$.result[?(@.domainName == '{domain}')].isAvailable",
-        "ValueCheck": "true"
+        "ValueCheck": "true",
+        "UnsupportedCondition": "NOT_CONTAINT",
+        "UnsupportedValue": "{domain}"
       }
     ]    
   },
