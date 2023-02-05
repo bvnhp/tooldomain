@@ -1,5 +1,30 @@
 [
   {
+    "Name": "Namesilo",
+    "Steps": [
+      {
+        "Method": "POST",
+        "ContentType": "application/x-www-form-urlencoded",
+        "Url": "https://www.namesilo.com/public/api/domains/bulk-check",
+        "Body": {
+          "domains[]": "{domain}",
+          "tlds[]": "{tld}"
+        },
+        "Regex": ".*\"\"checkId\"\":\"\"(.*?)\"\".*",
+        "IsGetValue": true
+      },
+      {
+        "Method": "GET",
+        "ContentType": "application/json",
+        "Url": "https://www.namesilo.com/public/api/domains/results/{stepData}",
+        "PathCheck": "$.data.domains[0].available",
+        "ValueCheck": "true",
+        "UnsupportedCondition": "NOT_CONTAINT",
+        "UnsupportedValue": "{domain}"
+      }
+    ]    
+  },
+  {
     "Name": "Name",
     "Steps": [
       {
