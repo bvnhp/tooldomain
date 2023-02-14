@@ -249,11 +249,11 @@
       {
         "Method": "GET",
         "ContentType": "application/json",
-        "Url": "https://www.secureserver.net/api/v1/search/exact?plid=1&q={domain}",
-        "PathCheck": "$.ExactMatchDomain.AvailabilityLabel",
-        "ValueCheck": "available_for_registration",
+        "Url": "https://www.secureserver.net/api/v1/domains/477979/?pageSize=1&q={domain}",
+        "PathCheck": "$.exactMatchDomain.available",
+        "ValueCheck": "true",
         "AvailableCondition": "CONTAINT",
-        "AvailableValue": "\"Fqdn\":\"{domain}\"",
+        "AvailableValue": "\"domain\":\"{domain}\"",
         "UnsupportedCondition": "CONTAINT",
         "UnsupportedValue": "\"Message\":\"The tld you are searching for is not available"
       }
