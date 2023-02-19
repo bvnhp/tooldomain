@@ -258,5 +258,21 @@
         "UnsupportedValue": "\"Message\":\"The tld you are searching for is not available"
       }
     ]
+  },
+  {
+    "Name": "Sedo",
+    "Steps": [
+      {
+        "Method": "GET",
+        "ContentType": "application/json",
+        "Url": "https://sedo.com/search/service/service.php?v=0.1&m=directMatch&f=getData&language=us&keyword={domain}",
+        "PathCheck": "$.b.status",
+        "ValueCheck": "true",
+        "AvailableCondition": "CONTAINT",
+        "AvailableValue": "\"domain\":\"{domain}\"",
+        "UnsupportedCondition": "NOT_CONTAINT",
+        "UnsupportedValue": "\"status\":"
+      }
+    ]
   }
 ]
