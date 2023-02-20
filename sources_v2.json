@@ -228,23 +228,23 @@
       }
     ]    
   },
-  // {
-  //   "Name": "Gandi",
-  //   "Steps": [
-  //     {
-  //       "Method": "GET",
-  //       "ContentType": "application/json",
-  //       "Header": {
-  //         "Authorization": "Apikey JE1DEpsSLdBYpwwAjmemD4pA"
-  //       },
-  //       "Url": "https://api.gandi.net/v5/domain/check?name={domain}",
-  //       "PathCheck": "$.products[0].status",
-  //       "ValueCheck": "available",
-  //       "UnsupportedCondition": "NOT_CONTAINT",
-  //       "UnsupportedValue": "{domain}"
-  //     }
-  //   ]    
-  // },
+  {
+    "Name": "Gandi",
+    "Steps": [
+      {
+        "Method": "GET",
+        "ContentType": "application/json",
+        "Header": {
+          "Authorization": "Apikey NdS9cEIn7wibbeH8KTL8Apud"
+        },
+        "Url": "https://api.gandi.net/v5/domain/check?name={domain}",
+        "PathCheck": "$.products[0].status",
+        "ValueCheck": "available",
+        "UnsupportedCondition": "NOT_CONTAINT",
+        "UnsupportedValue": "{domain}"
+      }
+    ]    
+  },
   {
     "Name": "Secureserver",
     "Steps": [
@@ -274,6 +274,37 @@
         "AvailableValue": "\"domain\":\"{domain}\"",
         "UnsupportedCondition": "NOT_CONTAINT",
         "UnsupportedValue": "\"status\":"
+      }
+    ]
+  },
+  {
+    "Name": "Domains33",
+    "Steps": [
+      {
+        "Method": "GET",
+        "ContentType": "application/json",
+        "Url": "http://www.domains33.com/js/api/domain-check?domain={domain}",
+        "PathCheck": "$.status",
+        "ValueCheck": "true"
+      }
+    ]
+  },
+  {
+    "Name": "Namestudio",
+    "Steps": [
+      {
+        "Method": "GET",
+        "ContentType": "application/json",
+        "Url": "https://api.namestudio.com/v1/nsapi/bulk-check?include-registered=true&tlds=com&names=noname22",
+        "Header": {
+          "client-key": "c502af01047ef0de8c40306b4ac083c0",
+          "user-id": "4d9046c4-0fec-4bc2-b831-50361252edb5",
+          "user-referer": "https://namestudio.com/"
+        },
+        "PathCheck": "$.results[0].availability",
+        "ValueCheck": "available",
+        "UnsupportedCondition": "CONTAINT",
+        "UnsupportedValue": "\"availability\":\"unknown\""
       }
     ]
   }
