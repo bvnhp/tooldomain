@@ -218,11 +218,29 @@
       {
         "Method": "GET",
         "ContentType": "application/json",
-        "Url": "https://api.1byte.com/domains/search-iu?domain={domain}&page=1",
-        "PathCheck": "$.domain.available",
+        "Url": "https://api.1byte.com/domains/super-filter?domains={domain}&TLDs={tld}&page=1",
+        "PathCheck": "$.domains[0].available",
         "ValueCheck": "true",
+        "AvailableCondition": "CONTAINT",
+        "AvailableValue": "\"domain\":\"{domain}\"",
         "UnsupportedCondition": "CONTAINT",
-        "UnsupportedValue": "{\"domain\":null"
+        "UnsupportedValue": "TLD_NOT_SUPPORT"
+      }
+    ]    
+  },
+  {
+    "Name": "1Byte",
+    "Steps": [
+      {
+        "Method": "GET",
+        "ContentType": "application/json",
+        "Url": "https://ca.ovh.com/engine/apiv6/order/cart/c72e0dbb-1783-4d8c-93c4-608407b626f7/domain?domain={domain}",
+        "PathCheck": "$.domains[0].available",
+        "ValueCheck": "true",
+        "AvailableCondition": "CONTAINT",
+        "AvailableValue": "\"domain\":\"{domain}\"",
+        "UnsupportedCondition": "CONTAINT",
+        "UnsupportedValue": "Client::BadRequest"
       }
     ]    
   },
