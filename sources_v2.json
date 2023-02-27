@@ -251,13 +251,14 @@
       {
         "Method": "GET",
         "ContentType": "application/json",
-        "Url": "https://www.secureserver.net/api/v1/search/exact?plid=2&q={domain}",
-        "PathCheck": "$.ExactMatchDomain.AvailabilityLabel",
-        "ValueCheck": "available_for_registration",
+        "Url": "https://www.secureserver.net/api/v1/domains/1592/?pageSize=1&q={domain}"
+        //"Url": "https://www.secureserver.net/api/v1/search/exact?plid=2&q={domain}",
+        "PathCheck": "$.exactMatchDomain.available",
+        "ValueCheck": "true",
         "AvailableCondition": "CONTAINT",
-        "AvailableValue": "\"Fqdn\":\"{domain}\"",
-        "UnsupportedCondition": "CONTAINT",
-        "UnsupportedValue": "\"Message\":\"The tld you are searching for is not available"
+        "AvailableValue": "\"domain\":\"{domain}\"",
+        "UnsupportedCondition": "NOT_CONTAINT",
+        "UnsupportedValue": "\"domain\":\"{domain}\""
       }
     ]
   },
