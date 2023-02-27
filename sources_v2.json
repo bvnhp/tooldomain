@@ -71,20 +71,10 @@
     "Name": "Namesilo",
     "Steps": [
       {
-        "Method": "POST",
-        "ContentType": "application/x-www-form-urlencoded",
-        "Url": "https://www.namesilo.com/public/api/domains/bulk-check",
-        "Body": {
-          "domains[]": "{domain}",
-          "tlds[]": "{tld}"
-        },
-        "Regex": ".*\"checkId\":\"(.*?)\".*",
-        "IsGetValue": true
-      },
-      {
         "Method": "GET",
         "ContentType": "application/json",
-        "Url": "https://www.namesilo.com/public/api/domains/results/{stepData}",
+        "Url": "https://www.namesilo.com/api/checkRegisterAvailability?version=1&type=xml&key=451b9b1238c094ccf8d719b2&domains={domain}",
+        "IsXml": true,
         "PathCheck": "$.data.domains[0].available",
         "ValueCheck": "true",
         "UnsupportedCondition": "NOT_CONTAINT",
