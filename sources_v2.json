@@ -251,8 +251,7 @@
       {
         "Method": "GET",
         "ContentType": "application/json",
-        "Url": "https://www.secureserver.net/api/v1/domains/1592/?pageSize=1&q={domain}"
-        //"Url": "https://www.secureserver.net/api/v1/search/exact?plid=2&q={domain}",
+        "Url": "https://www.secureserver.net/api/v1/domains/1592/?pageSize=1&q={domain}",
         "PathCheck": "$.exactMatchDomain.available",
         "ValueCheck": "true",
         "AvailableCondition": "CONTAINT",
