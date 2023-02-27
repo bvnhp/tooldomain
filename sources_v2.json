@@ -77,8 +77,10 @@
         "IsXml": true,
         "PathCheck": "$.data.domains[0].available",
         "ValueCheck": "true",
-        "UnsupportedCondition": "NOT_CONTAINT",
-        "UnsupportedValue": "{domain}"
+        "AvailableCondition": "NOT_CONTAINT",
+        "AvailableValue": "\"unavailable\"",
+        "UnsupportedCondition": "CONTAINT",
+        "UnsupportedValue": "</invalid>"
       }
     ]    
   },
