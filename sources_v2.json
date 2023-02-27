@@ -77,8 +77,8 @@
         "IsXml": true,
         "PathCheck": "$.namesilo.reply.code",
         "ValueCheck": "300",
-        "AvailableCondition": "NOT_CONTAINT",
-        "AvailableValue": "\"unavailable\"",
+        "AvailableCondition": "CONTAINT",
+        "AvailableValue": "\"available\"",
         "UnsupportedCondition": "CONTAINT",
         "UnsupportedValue": "</invalid>"
       }
