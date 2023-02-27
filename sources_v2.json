@@ -97,10 +97,12 @@
         "Body": {
           "Content": "{\"domainNames\": [\"{domain}\"]}"
         },
-        "PathCheck": "$.results[?(@.domainName == '{domain}')].status",
-        "ValueCheck": "available",
-        "UnsupportedCondition": "NOT_CONTAINT",
-        "UnsupportedValue": "{domain}"
+        "PathCheck": "$.results[0].purchaseType",
+        "ValueCheck": "registration",
+        "AvailableCondition": "CONTAINT",
+        "AvailableValue": "\"purchaseType\"",
+        "UnsupportedCondition": "CONTAINT",
+        "UnsupportedValue": "{}"
       }
     ]    
   },
