@@ -295,7 +295,7 @@
       {
         "Method": "GET",
         "ContentType": "application/json",
-        "Url": "https://api.namestudio.com/v1/nsapi/bulk-check?include-registered=true&tlds=com&names=noname22",
+        "Url": "https://api.namestudio.com/v1/nsapi/bulk-check?include-registered=true&tlds=com&names={domain}",
         "Header": {
           "client-key": "c502af01047ef0de8c40306b4ac083c0",
           "user-id": "4d9046c4-0fec-4bc2-b831-50361252edb5",
