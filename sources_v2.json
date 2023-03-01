@@ -301,5 +301,24 @@
         "UnsupportedValue": "\"availability\":\"unknown\""
       }
     ]
+  },
+  {
+    "Name": "Domainnameapi",
+    "Steps": [
+      {
+        "Method": "POST",
+        "ContentType": "application/json",
+        "Url": "https://www.domainnameapi.com/SingleDomainSearch",
+        "Body": {
+          "DomainName": "{domain}"
+        },
+        "PathCheck": "$.MainDomain.StatusInfo",
+        "ValueCheck": "AVAILABLE",
+        "AvailableCondition": "CONTAINT",
+        "AvailableValue": "\"DomainName\":\"{domain}\"",
+        "UnsupportedCondition": "CONTAINT",
+        "UnsupportedValue": "\"MainDomain\""
+      }
+    ]
   }
 ]
