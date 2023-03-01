@@ -1,45 +1,45 @@
 [  
-  {
-    "Name": "Whois",
-    "Steps": [
-      {
-        "Method": "GET",
-        "ContentType": "application/json",
-        "Url": "https://who.is/dns/{domain}",
-        "Regex": ".*var pendingDomainCheck = \"(.*?)\".*",
-        "IsGetValue": true
-      },
-      {
-        "Method": "POST",
-        "ContentType": "application/x-www-form-urlencoded",
-        "Url": "https://who.is/api/whois/checkDomainAvailability/{domain}",
-        "Body": {
-          "pendingDomainCheck": "{stepData}"
-        },
-        "PathCheck": "$.domains.[\"{domain}\"].avail",
-        "ValueCheck": "true",
-        "UnsupportedCondition": "NOT_CONTAINT",
-        "UnsupportedValue": "{domain}"
-      }
-    ]    
-  },
-  {
-    "Name": "Purely",
-    "Steps": [
-      {
-        "Method": "POST",
-        "ContentType": "application/json",
-        "Url": "https://purely.domains/domainchecker.php?action=checkdomains",
-        "Body": {
-          "Content": "{\"idn\": [\"{domain}\"],\"pc\": [\"{domain}\"],\"registrars\": [],\"premiumDomains\": 0}"
-        },
-        "PathCheck": "$.results[?(@.DOMAIN == '{domain}')].status",
-        "ValueCheck": "AVAILABLE",
-        "UnsupportedCondition": "CONTAINT",
-        "UnsupportedValue": "\"status\":\"INVALID\""
-      }
-    ]    
-  },
+  // {
+  //   "Name": "Whois",
+  //   "Steps": [
+  //     {
+  //       "Method": "GET",
+  //       "ContentType": "application/json",
+  //       "Url": "https://who.is/dns/{domain}",
+  //       "Regex": ".*var pendingDomainCheck = \"(.*?)\".*",
+  //       "IsGetValue": true
+  //     },
+  //     {
+  //       "Method": "POST",
+  //       "ContentType": "application/x-www-form-urlencoded",
+  //       "Url": "https://who.is/api/whois/checkDomainAvailability/{domain}",
+  //       "Body": {
+  //         "pendingDomainCheck": "{stepData}"
+  //       },
+  //       "PathCheck": "$.domains.[\"{domain}\"].avail",
+  //       "ValueCheck": "true",
+  //       "UnsupportedCondition": "NOT_CONTAINT",
+  //       "UnsupportedValue": "{domain}"
+  //     }
+  //   ]    
+  // },
+  // {
+  //   "Name": "Purely",
+  //   "Steps": [
+  //     {
+  //       "Method": "POST",
+  //       "ContentType": "application/json",
+  //       "Url": "https://purely.domains/domainchecker.php?action=checkdomains",
+  //       "Body": {
+  //         "Content": "{\"idn\": [\"{domain}\"],\"pc\": [\"{domain}\"],\"registrars\": [],\"premiumDomains\": 0}"
+  //       },
+  //       "PathCheck": "$.results[?(@.DOMAIN == '{domain}')].status",
+  //       "ValueCheck": "AVAILABLE",
+  //       "UnsupportedCondition": "CONTAINT",
+  //       "UnsupportedValue": "\"status\":\"INVALID\""
+  //     }
+  //   ]    
+  // },
   {
     "Name": "Univahost",
     "Steps": [
@@ -67,23 +67,23 @@
       }
     ]    
   },
-  {
-    "Name": "Namesilo",
-    "Steps": [
-      {
-        "Method": "GET",
-        "ContentType": "application/json",
-        "Url": "https://www.namesilo.com/api/checkRegisterAvailability?version=1&type=xml&key=451b9b1238c094ccf8d719b2&domains={domain}",
-        "IsXml": true,
-        "PathCheck": "$.namesilo.reply.code",
-        "ValueCheck": "300",
-        "AvailableCondition": "CONTAINT",
-        "AvailableValue": "\"available\"",
-        "UnsupportedCondition": "CONTAINT",
-        "UnsupportedValue": "</invalid>"
-      }
-    ]    
-  },
+  // {
+  //   "Name": "Namesilo",
+  //   "Steps": [
+  //     {
+  //       "Method": "GET",
+  //       "ContentType": "application/json",
+  //       "Url": "https://www.namesilo.com/api/checkRegisterAvailability?version=1&type=xml&key=451b9b1238c094ccf8d719b2&domains={domain}",
+  //       "IsXml": true,
+  //       "PathCheck": "$.namesilo.reply.code",
+  //       "ValueCheck": "300",
+  //       "AvailableCondition": "CONTAINT",
+  //       "AvailableValue": "\"available\"",
+  //       "UnsupportedCondition": "CONTAINT",
+  //       "UnsupportedValue": "</invalid>"
+  //     }
+  //   ]    
+  // },
   {
     "Name": "Name",
     "Steps": [
@@ -106,20 +106,20 @@
       }
     ]    
   },
-  {
-    "Name": "Monovm",
-    "Steps": [
-      {
-        "Method": "GET",
-        "ContentType": "application/json",
-        "Url": "https://monovm.com/api/whois/?domain={domain}",
-        "PathCheck": "$.[?(@.domain == '{domain}')].status",
-        "ValueCheck": "available",
-        "UnsupportedCondition": "NOT_CONTAINT",
-        "UnsupportedValue": "{domain}"
-      }
-    ]    
-  },
+  // {
+  //   "Name": "Monovm",
+  //   "Steps": [
+  //     {
+  //       "Method": "GET",
+  //       "ContentType": "application/json",
+  //       "Url": "https://monovm.com/api/whois/?domain={domain}",
+  //       "PathCheck": "$.[?(@.domain == '{domain}')].status",
+  //       "ValueCheck": "available",
+  //       "UnsupportedCondition": "NOT_CONTAINT",
+  //       "UnsupportedValue": "{domain}"
+  //     }
+  //   ]    
+  // },
   {
     "Name": "Milesweb",
     "Steps": [
@@ -222,23 +222,23 @@
       }
     ]    
   },
-  {
-    "Name": "Gandi",
-    "Steps": [
-      {
-        "Method": "GET",
-        "ContentType": "application/json",
-        "Header": {
-          "Authorization": "Apikey 5mxtQ287Bp2PyyVmX5F2dQs6"
-        },
-        "Url": "https://api.gandi.net/v5/domain/check?name={domain}",
-        "PathCheck": "$.products[0].status",
-        "ValueCheck": "available",
-        "UnsupportedCondition": "NOT_CONTAINT",
-        "UnsupportedValue": "{domain}"
-      }
-    ]    
-  },
+  // {
+  //   "Name": "Gandi",
+  //   "Steps": [
+  //     {
+  //       "Method": "GET",
+  //       "ContentType": "application/json",
+  //       "Header": {
+  //         "Authorization": "Apikey 5mxtQ287Bp2PyyVmX5F2dQs6"
+  //       },
+  //       "Url": "https://api.gandi.net/v5/domain/check?name={domain}",
+  //       "PathCheck": "$.products[0].status",
+  //       "ValueCheck": "available",
+  //       "UnsupportedCondition": "NOT_CONTAINT",
+  //       "UnsupportedValue": "{domain}"
+  //     }
+  //   ]    
+  // },
   {
     "Name": "Secureserver",
     "Steps": [
