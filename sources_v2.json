@@ -321,20 +321,4 @@
       }
     ]
   },
-  {
-    "Name": "Vebonix",
-    "Steps": [
-      {
-        "Method": "GET",
-        "ContentType": "application/json",
-        "Url": "https://www.vebonix.com/domain-search.php?domain_names[]={sld}&tlds[]={tld}&action=multiple-check-availability&idn_language=",
-        "PathCheck": "$.data.{domain}.status",
-        "ValueCheck": "available",
-        "AvailableCondition": "CONTAINT",
-        "AvailableValue": "\"{domain}\"",
-        "UnsupportedCondition": "CONTAINT",
-        "UnsupportedValue": "\"status\":\"unknown\""
-      }
-    ]
-  },
 ]
