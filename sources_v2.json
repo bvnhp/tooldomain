@@ -106,20 +106,20 @@
       }
     ]    
   },
-  // {
-  //   "Name": "Monovm",
-  //   "Steps": [
-  //     {
-  //       "Method": "GET",
-  //       "ContentType": "application/json",
-  //       "Url": "https://monovm.com/api/whois/?domain={domain}",
-  //       "PathCheck": "$.[?(@.domain == '{domain}')].status",
-  //       "ValueCheck": "available",
-  //       "UnsupportedCondition": "NOT_CONTAINT",
-  //       "UnsupportedValue": "{domain}"
-  //     }
-  //   ]    
-  // },
+  {
+    "Name": "Monovm",
+    "Steps": [
+      {
+        "Method": "GET",
+        "ContentType": "application/json",
+        "Url": "https://monovm.com/api/whois/?domain={domain}",
+        "PathCheck": "$.[0].status",
+        "ValueCheck": "available",
+        "UnsupportedCondition": "CONTAINT",
+        "UnsupportedValue": "\"error\":true"
+      }
+    ]    
+  },
   {
     "Name": "Milesweb",
     "Steps": [
