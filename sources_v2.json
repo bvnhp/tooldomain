@@ -301,5 +301,19 @@
         "UnsupportedValue": "\"availability\":\"unknown\""
       }
     ]
+  },
+  {
+    "Name": "Revved",
+    "Steps": [
+      {
+        "Method": "GET",
+        "ContentType": "application/json",
+        "Url": "https://domains.revved.com/v1/domainStatus?domains={domain}&eppTimeoutMillis=2000&deadlineMillis=8000&eppNoCache=true&whois=true&trace=true&eppOnly=false",
+        "PathCheck": "$.[0].available",
+        "ValueCheck": "true",
+        "AvailableCondition": "CONTAINT",
+        "AvailableValue": "\"name\":\"{domain}\""
+      }
+    ]
   }
 ]
