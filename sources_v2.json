@@ -315,5 +315,19 @@
         "AvailableValue": "\"name\":\"{domain}\""
       }
     ]
+  },
+  {
+    "Name": "Wix",
+    "Steps": [
+      {
+        "Method": "GET",
+        "ContentType": "application/json",
+        "Url": "https://www.wix.com/domain-search/available?domain={domain}",
+        "PathCheck": "$.availability.status",
+        "ValueCheck": "AVAILABLE",
+        "AvailableCondition": "CONTAINT",
+        "AvailableValue": "\"domain\":\"{domain}\""
+      }
+    ]
   }
 ]
