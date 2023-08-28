@@ -329,5 +329,21 @@
         "AvailableValue": "\"domain\":\"{domain}\""
       }
     ]
+  },
+  {
+    "Name": "Fasthosts",
+    "Steps": [
+      {
+        "Method": "GET",
+        "ContentType": "application/json",
+        "Url": "https://admin.fasthosts.co.uk/DomainNames/AvailabilityChecker/Availability/{domain}",
+        "PathCheck": "$.result.status",
+        "ValueCheck": "available",
+        "AvailableCondition": "CONTAINT",
+        "AvailableValue": "\"term\":\"{domain}\"",
+        "UnsupportedCondition": "CONTAINT",
+        "UnsupportedValue": "The domain TLD must be registerable"
+      }
+    ]
   }
 ]
