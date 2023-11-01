@@ -262,12 +262,12 @@
         "Method": "GET",
         "ContentType": "application/json",
         "Url": "https://sedo.com/search/service/service.php?v=0.1&m=directMatch&f=getData&language=us&keyword={domain}",
-        "PathCheck": "$.b.status",
-        "ValueCheck": "true",
+        "PathCheck": "$.b.valid",
+        "ValueCheck": "false",
         "AvailableCondition": "CONTAINT",
         "AvailableValue": "\"domain\":\"{domain}\"",
         "UnsupportedCondition": "NOT_CONTAINT",
-        "UnsupportedValue": "\"status\":"
+        "UnsupportedValue": "\"forsale\":"
       }
     ]
   },
