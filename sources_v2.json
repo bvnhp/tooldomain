@@ -390,5 +390,21 @@
         "UnsupportedValue": "{domain}"
       }
     ]    
+  },
+  {
+    "Name": "Wordpress",
+    "Steps": [
+      {
+        "Method": "GET",
+        "ContentType": "application/json",
+        "Url": "https://public-api.wordpress.com/rest/v1.3/domains/{domain}/is-available",
+        "PathCheck": "$.status",
+        "ValueCheck": "available",
+        "AvailableCondition": "CONTAINT",
+        "AvailableValue": "\"domain_name\":\"{domain}\"",
+        "UnsupportedCondition": "CONTAINT",
+        "UnsupportedValue": "tld_not_supported"
+      }
+    ]
   }
 ]
