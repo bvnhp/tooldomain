@@ -359,5 +359,19 @@
         "UnsupportedValue": "The domain TLD must be registerable"
       }
     ]
-  }
+  },
+  {
+    "Name": "iNet",
+    "Steps": [
+      {
+        "Method": "GET",
+        "ContentType": "application/json",
+        "Url": "https://inet.vn/api/order/checkavailable/{domain}",
+        "PathCheck": "$.status",
+        "ValueCheck": "available",
+        "AvailableCondition": "CONTAINT",
+        "AvailableValue": "\"domainName\":\"{domain}\""
+      }
+    ]
+  },
 ]
