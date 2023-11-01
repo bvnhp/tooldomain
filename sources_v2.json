@@ -406,5 +406,22 @@
         "UnsupportedValue": "tld_not_supported"
       }
     ]
+  },  
+  {
+    "Name": "domains.co.za",
+    "Steps": [
+      {
+        "Method": "POST",
+        "ContentType": "application/x-www-form-urlencoded",
+        "Url": "https://www.domains.co.za/cont/domainRegistration.php?action=checkDomain",
+        "Body": {
+          "domain": "{domain}"
+        },
+        "PathCheck": "$.status",
+        "ValueCheck": "available",
+        "UnsupportedCondition": "CONTAINT",
+        "UnsupportedValue": "\"result\":\"error\""
+      }
+    ]    
   }
 ]
