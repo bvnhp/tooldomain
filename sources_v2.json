@@ -329,6 +329,20 @@
         "AvailableValue": "\"domain\":\"{domain}\""
       }
     ]
+  },  
+  {
+    "Name": "Wixapis",
+    "Steps": [
+      {
+        "Method": "GET",
+        "ContentType": "application/json",
+        "Url": "https://www.wixapis.com/domain-search/v2/check-domain-availability?domain={domain}",
+        "PathCheck": "$.availability.available",
+        "ValueCheck": "true",
+        "AvailableCondition": "CONTAINT",
+        "AvailableValue": "\"domain\":\"{domain}\""
+      }
+    ]
   },
   {
     "Name": "Fasthosts",
