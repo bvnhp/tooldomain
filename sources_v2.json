@@ -455,5 +455,22 @@
         "UnsupportedValue": "\"errors\""
       }
     ]
+  },  
+  {
+    "Name": "Domainavailability",
+    "Steps": [
+      {
+        "Method": "POST",
+        "ContentType": "application/x-www-form-urlencoded",
+        "Url": "https://domainavailability.net/search/single_query",
+        "Body": {
+          "url": "{domain}"
+        },
+        "PathCheck": "$.status",
+        "ValueCheck": "available",
+        "UnsupportedCondition": "NOT_CONTAINT",
+        "UnsupportedValue": "{domain}"
+      }
+    ]    
   }
 ]
