@@ -423,5 +423,21 @@
         "UnsupportedValue": "\"result\":\"error\""
       }
     ]    
+  },
+  {
+    "Name": "Cheaphosted",
+    "Steps": [
+      {
+        "Method": "GET",
+        "ContentType": "application/json",
+        "Url": "https://cheaphosted.com/order-form/ajax.php?action=domain_check&sld={sld}&tld={tld}",
+        "PathCheck": "$.domain",
+        "ValueCheck": "0",
+        "AvailableCondition": "CONTAINT",
+        "AvailableValue": "\"domain\":",
+        "UnsupportedCondition": "CONTAINT",
+        "UnsupportedValue": "TLD error"
+      }
+    ]
   }
 ]
