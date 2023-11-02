@@ -439,5 +439,21 @@
         "UnsupportedValue": "TLD error"
       }
     ]
+  },
+  {
+    "Name": "Zyro",
+    "Steps": [
+      {
+        "Method": "GET",
+        "ContentType": "application/json",
+        "Url": "https://backend.zyro.com/v3/hdomains/availability?domain={domain}&domainName={sld}&tld={tld}",
+        "PathCheck": "$.isAvailable",
+        "ValueCheck": "1",
+        "AvailableCondition": "CONTAINT",
+        "AvailableValue": "\"isAvailable\"",
+        "UnsupportedCondition": "CONTAINT",
+        "UnsupportedValue": "\"errors\""
+      }
+    ]
   }
 ]
