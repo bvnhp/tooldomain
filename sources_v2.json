@@ -488,5 +488,21 @@
         "UnsupportedValue": "\"BLACKLISTED\""
       }
     ]
+  },
+  {
+    "Name": "Domaintyper",
+    "Steps": [
+      {
+        "Method": "GET",
+        "ContentType": "application/x-www-form-urlencoded",
+        "Url": "https://domaintyper.com/API/DomainCheckAsync?domain={domain}&tlds=[\"{tld}\"]",
+        "PathCheck": "$.status",
+        "ValueCheck": "True",
+        "AvailableCondition": "CONTAINT",
+        "AvailableValue": "\"{sld}\"",
+        "UnsupportedCondition": "NOT_CONTAINT",
+        "UnsupportedValue": "\"{sld}\""
+      }
+    ]
   }
 ]
