@@ -472,5 +472,21 @@
         "UnsupportedValue": "{domain}"
       }
     ]    
+  },
+  {
+    "Name": "World4you",
+    "Steps": [
+      {
+        "Method": "GET",
+        "ContentType": "application/json",
+        "Url": "https://domainchecker.world4you.com/?domain={domain}",
+        "PathCheck": "$.{domain}",
+        "ValueCheck": "FREE",
+        "AvailableCondition": "CONTAINT",
+        "AvailableValue": "\"FREE\"",
+        "UnsupportedCondition": "CONTAINT",
+        "UnsupportedValue": "\"BLACKLISTED\""
+      }
+    ]
   }
 ]
