@@ -504,5 +504,19 @@
         "UnsupportedValue": "\"{sld}\""
       }
     ]
+  },
+  {
+    "Name": "Revved",
+    "Steps": [
+      {
+        "Method": "GET",
+        "ContentType": "application/json",
+        "Url": "https://domains.revved.com/v1/domainStatus?domains=,{domain}",
+        "PathCheck": "$.status[0].available",
+        "ValueCheck": "true",
+        "AvailableCondition": "CONTAINT",
+        "AvailableValue": "\"name\":\"{domain}\""
+      }
+    ]
   }
 ]
