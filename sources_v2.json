@@ -518,5 +518,17 @@
         "AvailableValue": "\"name\":\"{domain}\""
       }
     ]
+  },
+  {
+    "Name": "Iana",
+    "Steps": [
+      {
+        "Method": "GET",
+        "ContentType": "application/json",
+        "Url": "{url}domain/{domain}",
+        "AvailableCondition": "NOT_CONTAINT",
+        "AvailableValue": "\"eventAction\":\"registration\""
+      }
+    ]
   }
 ]
