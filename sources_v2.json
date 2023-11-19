@@ -526,8 +526,7 @@
         "Method": "GET",
         "ContentType": "application/json",
         "Url": "{url}domain/{domain}",
-        "AvailableCondition": "NOT_CONTAINT",
-        "AvailableValue": "\"eventAction\":\"registration\""
+        "AvailableCondition": "!p0.Contains(\"eventAction\": \"registration\") && !p0.Contains(\"eventAction\":\"registration\")"
       }
     ]
   }
