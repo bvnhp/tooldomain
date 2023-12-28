@@ -548,5 +548,24 @@
         "UnsupportedValue": "\"domains\":null"
       }
     ]    
+  },
+  {
+    "Name": "Gocloudeasy",
+    "Steps": [
+      {
+        "Method": "POST",
+        "ContentType": "application/json",
+        "Url": "https://api.gocloudeasy.com/v1/tool/check-avail",
+        "Body": {
+          "Content": "{\"domain\":\"{domain}\"}"
+        },
+        "PathCheck": "$.avail",
+        "ValueCheck": "1",
+        "AvailableCondition": "CONTAINT",
+        "AvailableValue": "\"1\"",
+        "UnsupportedCondition": "CONTAINT",
+        "UnsupportedValue": ":1}"
+      }
+    ]    
   }
 ]
