@@ -529,5 +529,24 @@
         "AvailableCondition": "!p0.Contains(\"\\\"eventAction\\\": \\\"registration\\\"\") && !p0.Contains(\"\\\"eventAction\\\":\\\"registration\\\"\") && !p0.Contains(\"\\\"eventAction\\\" : \\\"registration\\\"\")"
       }
     ]
+  },
+  {
+    "Name": "Skiff",
+    "Steps": [
+      {
+        "Method": "POST",
+        "ContentType": "application/json",
+        "Url": "https://api.skiff.com/graphql",
+        "Body": {
+          "Content": "{\"operationName\": \"checkIfDomainsAvailable\",\"variables\": {\"domains\": [\"{domain}\"]},\"query\": \"query checkIfDomainsAvailable($domains: [String!]!) {checkIfDomainsAvailable(domains: $domains) {domains {available domain}}}\"}"
+        },
+        "PathCheck": "$.data.checkIfDomainsAvailable.domains[0].available",
+        "ValueCheck": "true",
+        "AvailableCondition": "CONTAINT",
+        "AvailableValue": "\"{domain}\"",
+        "UnsupportedCondition": "CONTAINT",
+        "UnsupportedValue": "\"domains\":null"
+      }
+    ]    
   }
 ]
