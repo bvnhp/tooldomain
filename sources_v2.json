@@ -560,9 +560,9 @@
           "Content": "{\"domain\":\"{domain}\"}"
         },
         "PathCheck": "$.avail",
-        "ValueCheck": "1",
+        "ValueCheck": "0",
         "AvailableCondition": "CONTAINT",
-        "AvailableValue": "\"1\"",
+        "AvailableValue": "\"0\"",
         "UnsupportedCondition": "CONTAINT",
         "UnsupportedValue": ":1}"
       }
