@@ -537,6 +537,9 @@
         "Method": "POST",
         "ContentType": "application/json",
         "Url": "https://api.skiff.com/graphql",
+        "Header": {
+          "cookie": "__Secure-auth_cookie_f0fcf092-0a83-4ed2-a64d-3fbf64bfeb7b=eyJhbGciOiJFUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6ImEyMjIzMTlkLTRiZTUtNDRkNS1iYTI2LTRkMDY5MzcwMDljMCJ9.eyJ1c2VySUQiOiJmMGZjZjA5Mi0wYTgzLTRlZDItYTY0ZC0zZmJmNjRiZmViN2IiLCJzZXNzaW9uSUQiOiJjY2Y5OWUyNC05MmVkLTQwMTAtODA2Zi03NDgyMTU1N2UzMGMiLCJpYXQiOjE3MDQ1NjI5MzIsImV4cCI6MTcwOTc0NjkzMiwiYXVkIjoiL2xvZ2luIn0.6ZlfmcpdbRRD5bYV7UgXY045F81MKRgFmoIuBkVGmhe2qv-018Xyf9CBF2EF8-z7ZExSLXCiXEt2zkpknznmSg; __cf_bm=ZiQHLSepoiGw8Fret_vJuhe08LBDOP2snWo_dGhtG7A-1704562953-1-AVUXV76uQoj+1UiPbLGiXtimVWWLkJQovcPG+LxOiIYYbI63A8i2UzLDFQp9f0id1W9Iy0bCsNplFJgWJlrL9+w="
+        },
         "Body": {
           "Content": "{\"operationName\": \"checkIfDomainsAvailable\",\"variables\": {\"domains\": [\"{domain}\"]},\"query\": \"query checkIfDomainsAvailable($domains: [String!]!) {checkIfDomainsAvailable(domains: $domains) {domains {available domain}}}\"}"
         },
