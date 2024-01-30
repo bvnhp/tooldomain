@@ -570,5 +570,21 @@
         "UnsupportedValue": ":1}"
       }
     ]    
+  },
+  {
+    "Name": "Bigrock.in",
+    "Steps": [
+      {
+        "Method": "GET",
+        "ContentType": "application/json",
+        "Url": "https://www.bigrock.in/domain-search.php?domain_names[]={sld}&tlds[]={tld}&action=multiple-check-availability&idn_language=",
+        "PathCheck": "$.data.{domain}.status",
+        "ValueCheck": "available",
+        "AvailableCondition": "CONTAINT",
+        "AvailableValue": "{domain}",
+        "UnsupportedCondition": "CONTAINT",
+        "UnsupportedValue": "\"unknown\""
+      }
+    ]    
   }
 ]
