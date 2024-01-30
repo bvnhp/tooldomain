@@ -586,5 +586,21 @@
         "UnsupportedValue": "\"unknown\""
       }
     ]    
+  },
+  {
+    "Name": "Dotster.com",
+    "Steps": [
+      {
+        "Method": "GET",
+        "ContentType": "application/json",
+        "Url": "https://registration.dotster.com/domains/search/{domain}?suggestions=0&aftermarket=true&registry_premium=true&propertyID=46&tlds={tld}&currency=USD",
+        "PathCheck": "$.results[0].domainInfo.availability",
+        "ValueCheck": "true",
+        "AvailableCondition": "CONTAINT",
+        "AvailableValue": "\"domain\":\"{domain}\"",
+        "UnsupportedCondition": "NOT_CONTAINT",
+        "UnsupportedValue": "{domain}"
+      }
+    ]    
   }
 ]
