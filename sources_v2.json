@@ -602,5 +602,21 @@
         "UnsupportedValue": "{domain}"
       }
     ]    
+  },
+  {
+    "Name": "Appypie.com",
+    "Steps": [
+      {
+        "Method": "GET",
+        "ContentType": "application/json",
+        "Url": "https://snappy.appypie.com/domain/get-domain-new-api/name/{domain}",
+        "PathCheck": "$.results[0].purchasable",
+        "ValueCheck": "true",
+        "AvailableCondition": "CONTAINT",
+        "AvailableValue": "\"{domain}\"",
+        "UnsupportedCondition": "NOT_CONTAINT",
+        "UnsupportedValue": "{domain}"
+      }
+    ]    
   }
 ]
